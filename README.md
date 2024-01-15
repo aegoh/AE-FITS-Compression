@@ -16,7 +16,7 @@ mnist: Using mnist digits as dataset.
 
 toy: Using simulated data as dataset.
 
-The latent space is a 1D vector, where the bottleneck layer is a fully connected layer. There is a tunable parameter at prediction that masks a fraction of the latent space when passing into the decoder models. The mask vector $m_i$ can be determined by some parameter $\eta$ 
+The latent space is a 1D vector, where the bottleneck layer is a fully connected layer. I propose a tunable compression scheme where a tunable parameter is specified manually at prediction that masks a fraction of the latent space when passing into the decoder models. The mask vector $m$ can be determined by some parameter $\eta$ 
 
 $$\eta \rightarrow m_i = \ \begin{cases} 
       1 & i \leq \eta \\
@@ -24,13 +24,13 @@ $$\eta \rightarrow m_i = \ \begin{cases}
    \end{cases}
 \ $$
 
-where $dim(m_i) = dim(\hat{z_i})$
+where $m_i$ denote the components of $m$ and $dim(m) = dim(\hat{z})$
 
-Given a specific parameter $\eta$ that yields a corresponding mask vector $m_i$, a forward pass image mean prediction of the model is $\hat{\mu} = g_{\mu}(m_i * f(\hat{x}))$ where $*$ indicates the element-wise product. During training, we initialize a random value for the $\eta$ parameter for each training batch in the forward pass and fit for the objective functions. A trained ideal model is expected to approximate principal component analysis (PCA), where $z_1$ is the first principal component. 
+Given a specific parameter $\eta$ that yields a corresponding mask vector $m$, a forward pass image mean prediction of the model is $\hat{\mu} = g_{\mu}(m * f(\hat{x}))$ where $*$ indicates the element-wise product. During training, we initialize a random value for the $\eta$ parameter for each training batch in the forward pass and fit for the objective functions. A trained ideal model is expected to approximate principal component analysis (PCA), where $z_1$ is the first principal component. 
 
 ## fullyconv_tunable_toy.ipynb 
 
-If the images are large, with dimensions (256,256,1), then the number of model parameters will blow up if we have a fully connected layer at the bottleneck. A solution to this is to implement a fully convolutional model, so the latent space has the shape (num_rows, num_columns, num_channels). The tunable compression scheme is similar to the one presented in 1D_tunable_mnist/toy.ipynb    
+If the images are large, with dimensions (256,256,1), then the number of model parameters will blow up if we have a fully connected layer at the bottleneck. A solution to this is to implement a fully convolutional model, so the latent space has the shape (num_rows, num_columns, num_channels). The proposed tunable compression scheme is similar to the one presented in 1D_tunable_mnist/toy.ipynb    
 
 $$\eta \rightarrow m_{ijk} = \ \begin{cases} 
       1 & \text{for all i,j if } k \leq \eta \\
