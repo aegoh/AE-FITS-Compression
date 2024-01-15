@@ -30,5 +30,5 @@ Given a specific parameter $\eta$ that yields a corresponding mask vector $m_i$,
 
 ## 2D_tunable_toy.ipynb 
 
-If the images are large, with dimensions (256,256,1), then the number of model parameters will blow up if we have a fully connected layer at the bottleneck. A solution to this is to implement a fully convolutional model, so the latent space has the shape (height, width, num_channels).  
+If the images are large, with dimensions (256,256,1), then the number of model parameters will blow up if we have a fully connected layer at the bottleneck. A solution to this is to implement a fully convolutional model, so the latent space has the shape (height, width, num_channels). The tunable compression scheme is similar to the one presented in 1D_tunable_mnist/toy.ipynb    
 
