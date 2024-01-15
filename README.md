@@ -38,7 +38,7 @@ $$\eta \rightarrow m_{ijk} = \ \begin{cases}
    \end{cases}
 \ $$
 
-where i,j indicates the row and column of the latent space and k indicates the channel. This method seems to behave unexpectedly; it does not perform the best at 1x compression (no compression) but at a specific compression ratio.   
+where i,j indicates the row and column of the latent space and k indicates the channel. This method seems to behave unexpectedly; it does not perform the best at 1x compression (no compression) but instead at seemingly arbitrary specific compression ratio.   
 
 ## beta-vae.ipynb 
 
