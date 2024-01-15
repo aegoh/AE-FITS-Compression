@@ -58,6 +58,14 @@ Uses the package ztfquery to download random raw ZTF images and cut out stamps o
 
 code: https://github.com/MickaelRigault/ztfquery
 
+## Pixel_AE.ipynb
+
+Pixel Autoencoder (https://keras.io/examples/generative/pixelcnn/) with focal frequency loss (https://github.com/ZohebAbai/tf-focal-frequency-loss/tree/main).  
+
+
+![Alt text](residual.png?raw=true "Title")
+
+
 
 
 
