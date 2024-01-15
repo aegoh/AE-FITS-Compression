@@ -40,3 +40,9 @@ $$\eta \rightarrow m_{ijk} = \ \begin{cases}
 
 where i,j indicates the row and column of the latent space and k indicates the channel. 
 
+## beta-vae.ipynb 
+
+An attempt to implement the beta parameterized variational autoencoder (BVAE) from the article, Machine-Learning Compression for Particle Physics Discoveries: https://arxiv.org/abs/2210.11489
+
+code: https://github.com/erichuangyf/EMD_VAE/tree/neurips_ml4ps
+
