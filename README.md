@@ -7,6 +7,7 @@ Bottleneck layer (latent space) is passed into two decoder models. One decoder m
 ## 1D_tunable_mnist/toy 
 
 mnist: Using mnist digits as dataset.
+
 toy: Using simulated data as dataset.
 
 The latent space is a 1D vector, where the bottleneck is a fully connected layer. The compression ratio is dim(Image) / dim (latent_vector). 
