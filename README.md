@@ -46,3 +46,5 @@ An attempt to implement the beta parameterized variational autoencoder (BVAE) fr
 
 code: https://github.com/erichuangyf/EMD_VAE/tree/neurips_ml4ps
 
+It does not work as expected so there could be an error in the implementation. 
+
