@@ -48,3 +48,16 @@ code: https://github.com/erichuangyf/EMD_VAE/tree/neurips_ml4ps
 
 It does not work as expected so there could be an error in the implementation. 
 
+## fullyconv_denoise.ipynb
+
+Implementation of a fully convolutional denoising autoencoder on toy dataset. The tuning scheme is implemented but has not been tested.    
+
+## ZTF_stamp_download.ipynb 
+
+Uses the package ztfquery to download random raw ZTF images and cut out stamps of size 256x256. Creates an image mask using the astropy and photutils packages that masks parts of the image that only has background noise.     
+
+code: https://github.com/MickaelRigault/ztfquery
+
+
+
+
