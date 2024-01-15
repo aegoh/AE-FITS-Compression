@@ -19,7 +19,11 @@ toy: Using simulated data as dataset.
 The latent space is a 1D vector, where the bottleneck layer is a fully connected layer. There is a tunable parameter at prediction that masks a fraction of the latent space when passing into the decoder models. The mask vector $m_i$ can be determined by some parameter $\eta$ 
 
 $$\eta \rightarrow m_i = \ \begin{cases} 
-      1 & x\leq 0 \\
-      \frac{100-x}{100} & 0\leq x\leq 100 
+      1 & i \leq \eta \\
+      0 & i > \eta
    \end{cases}
 \ $$
+
+where $dim(m_i) = dim(\hat{z})$.
+
+
