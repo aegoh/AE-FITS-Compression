@@ -24,7 +24,7 @@ $$\eta \rightarrow m_i = \ \begin{cases}
    \end{cases}
 \ $$
 
-where $dim(m_i) = dim(\hat{z_i})$, and i is the size of the latent space.
+where $dim(m_i) = dim(\hat{z_i})$
 
 Given a specific parameter $\eta$ that yields a corresponding mask vector $m_i$, a forward pass image mean prediction of the model is $\hat{\mu} = g_{\mu}(m_i * f(\hat{x}))$ where $*$ indicates the element-wise product. During training, we initialize a random value for the $\eta$ parameter for each training batch in the forward pass and fit for the objective functions. A trained ideal model is expected to approximate principal component analysis (PCA), where $z_1$ is the first principal component. 
 
