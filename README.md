@@ -28,7 +28,7 @@ where $dim(m_i) = dim(\hat{z_i})$, and i is the size of the latent space.
 
 Given a specific parameter $\eta$ that yields a corresponding mask vector $m_i$, a forward pass image mean prediction of the model is $\hat{\mu} = g_{\mu}(m_i * f(\hat{x}))$ where $*$ indicates the element-wise product. During training, we initialize a random value for the $\eta$ parameter for each training batch in the forward pass and fit for the objective functions. A trained ideal model is expected to approximate principal component analysis (PCA), where $z_1$ is the first principal component. 
 
-## 2D_tunable_toy.ipynb 
+## fullyconv_tunable_toy.ipynb 
 
 If the images are large, with dimensions (256,256,1), then the number of model parameters will blow up if we have a fully connected layer at the bottleneck. A solution to this is to implement a fully convolutional model, so the latent space has the shape (height, width, num_channels). The tunable compression scheme is similar to the one presented in 1D_tunable_mnist/toy.ipynb    
 
