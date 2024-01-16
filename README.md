@@ -3,11 +3,20 @@ Performing image compression on FITS images using autoencoder architecture using
 
 Encoder is the map from the image $\hat{x}$ to latent vector $\hat{z}$,  $$f: \hat{x} \rightarrow \hat{z}$$
 
-The latent space $\hat{z}$ is passed into two decoder models in the forward pass. One decoder model predicts the image ‘mean’, where the objective function to be minimized is the mean squared error. The other decoder model predicts the ‘variance’, where the objective function is the log likelihood. The two decoder models are trained independently from each other with two separate optimizers.
+The latent space $\hat{z}$ is passed into two decoder models in the forward pass. One decoder model predicts the image ‘mean’. The mean decoder is the map from the latent vector to image mean $$g_{\mu}: \hat{z} \rightarrow \hat{\mu}$$ 
 
-Mean Decoder is the map from the latent vector to image mean $$g_{\mu}: \hat{z} \rightarrow \hat{\mu}$$ 
+where the objective function to be minimized is the mean squared error:
 
-Variance Decoder is the map from the latent vector to variance map $$g_{\sigma}: \hat{z} \rightarrow \hat{\sigma}$$
+$$C_{mse} = [\hat{x} - g_{\mu}(f(\hat{x}))]^2$$
+
+The other decoder model predicts the ‘variance’. The variance decoder is the map from the latent vector to variance map $$g_{\sigma}: \hat{z} \rightarrow \hat{\sigma^2}$$
+
+where the objective function is the log likelihood. 
+
+$$C_{l} = \log(g_{\sigma}(f(\hat{x})) + \epsilon) + \frac{[\hat{x} - g_{\mu}(f(\hat{x}))]^2}{g_{\sigma}(f(\hat{x}))+\epsilon}$$
+
+The two decoder models are trained independently from each other with two separate optimizers.
+
 
 
 ## 1D_tunable_mnist/toy.ipynb
