@@ -15,7 +15,7 @@ where the objective function is the log likelihood.
 
 $$C_{l} = \log(g_{\sigma}(f(\hat{x})) + \epsilon) + \frac{[\hat{x} - g_{\mu}(f(\hat{x}))]^2}{g_{\sigma}(f(\hat{x}))+\epsilon}$$
 
-The two decoder models are trained independently from each other with two separate optimizers.
+where $\epsilon$ is a small number to prevent divergence in the loss while training. The two decoder models are trained independently from each other with two separate optimizers.
 
 
 
