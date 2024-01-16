@@ -69,7 +69,7 @@ code: https://github.com/MickaelRigault/ztfquery
 
 ## Pixel_AE.ipynb
 
-Pixel Autoencoder with residual connections (https://keras.io/examples/generative/pixelcnn/) with focal frequency loss (https://github.com/ZohebAbai/tf-focal-frequency-loss/tree/main). Includes comparison with Hcompress algorithm using h-scale compression parameter from the astropy.io.fits.CompImageHDU class (https://docs.astropy.org/en/stable/io/fits/api/images.html) and the fpack program (https://heasarc.gsfc.nasa.gov/fitsio/fpack/). 
+Pixel Autoencoder with residual connections (https://keras.io/examples/generative/pixelcnn/) with focal frequency loss (paper: https://arxiv.org/pdf/2012.12821.pdf, code: https://github.com/ZohebAbai/tf-focal-frequency-loss/tree/main). Includes comparison with Hcompress algorithm using h-scale compression parameter from the astropy.io.fits.CompImageHDU class (https://docs.astropy.org/en/stable/io/fits/api/images.html) and the fpack program (https://heasarc.gsfc.nasa.gov/fitsio/fpack/). 
 
 
 Training the network on unnormalized 16 bit images (pixel values can range from 0 to the thousands for an image stamp) is inadequate as it is unable to 'recover' signal that is close to the noise background (dim stars). I use a logarithmic (base 10) function to normalize the images and have the autoencoder train on these normalized images instead. Rescaling the predicted mean image to the unnormalized scale and calculating the difference between the raw image still yields large errors (e.g. original star is much brighter than predicted star). So I attempt to ease this error by adding a second residual block that tries to learn the mapping from the normalized image to the unnormalized image.
