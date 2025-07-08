@@ -1,5 +1,5 @@
 # AE-FITS-Compression
-Performing image compression on FITS images using autoencoder architecture using the TensorFlow framework.
+Performing neural-based lossy image compression on FITS images using autoencoder architecture using the TensorFlow framework.
 
 Encoder is the map from the image $\hat{x}$ to latent vector $\hat{z}$,  $$f: \hat{x} \rightarrow \hat{z}$$
 
